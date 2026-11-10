@@ -26,7 +26,11 @@ jobs:
         echo "Fin del login"
     
     - name: Build the Docker image
-      run: docker build --file Dockerfile --tag diegomamtz/docker-graphql:0.0.2 .
+      run: |
+        docker build --file Dockerfile --tag diegomamtz/docker-graphql:0.0.2 .
+        docker build --file Dockerfile --tag diegomamtz/docker-graphql:latest .
     # --tag my-image-name:$(date +%s)
     - name: Push the docker image
-      run: docker push diegomamtz/docker-graphql:0.0.2
+      run: |
+        docker push diegomamtz/docker-graphql:0.0.2
+        docker push diegomamtz/docker-graphql:latest
