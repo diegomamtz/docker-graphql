@@ -28,3 +28,5 @@ jobs:
     - name: Build the Docker image
       run: docker build --file Dockerfile --tag diegomamtz/docker-graphql:0.0.2 .
     # --tag my-image-name:$(date +%s)
+    - name: Push the docker image
+      run: docker push diegomamtz/graphql:0.0.2 .
